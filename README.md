@@ -62,3 +62,19 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
+### PASSO A PASSO PARA EXECUTAR O PROJETO
+- REQUESITOS DOS SISTEMA
+	- PHP 7.4^;
+	- MySQL 5.7^;
+	- Laravel 8;
+
+- CRIAR UM BANCO DE DADOS NO MYSQL (CREATE DATABASE database_name);
+- GERAR CHAVE DO PROJETO (php artisan key:generate), E POSTERIORMENTE CONFIGURAR O AQUIVO .env (COLOCAR AS INFORMAÇÕES RELACIONADAS AO BANCO CRIADO);
+- EXECUTAR O COMANDO "COMPOSER INSTALL" E POSTERIORMENTE "COMPOSER DUMP-AUTOLOD";
+- EXECUTAR O COMANDO "php artisan config:cache";
+- RODAR AS MIGRATIONS (php artisan migrate);
+- EXECUTAR O SERVE (php artisan serve);
