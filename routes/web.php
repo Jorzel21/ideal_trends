@@ -14,9 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   return redirect()->route('pedido.index');
 });
 
-Route::resource('/produto',                                 'ProdutoController');
-Route::resource('/pedido',                                  'PedidoController');
-Route::resource('/cliente',                                 'ClienteController');
+Route::get('/produto/get/{id?}', 'App\Http\Controllers\ProdutoController@get')->name('produto.get');
+Route::resource('/produto',                                 'App\Http\Controllers\ProdutoController');
+Route::resource('/pedido',                                  'App\Http\Controllers\PedidoController');
+Route::resource('/cliente',                                 'App\Http\Controllers\ClienteController');
+
+
+Route::post('/produto/delete', 'App\Http\Controllers\ProdutoController@delete')->name('produto.delete');
+Route::post('/pedido/delete', 'App\Http\Controllers\PedidoController@delete')->name('pedido.delete');
+Route::post('/cliente/delete', 'App\Http\Controllers\ClienteController@delete')->name('cliente.delete');
+
